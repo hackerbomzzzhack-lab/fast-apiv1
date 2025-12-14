@@ -49,7 +49,7 @@ class ItemResponse(ItemCreate):
 # FastAPI App
 # -------------------------
 app = FastAPI()
-mcp = FastApiMCP(app)
+mcp = FastApiMCP(app, allow_post=True)
 
 # -------------------------
 # Root endpoint
@@ -129,6 +129,7 @@ def delete_item(item_id: int):
     db.commit()
     db.close()
     return {"message": "Item deleted successfully"}
+
 
 
 mcp.mount()
