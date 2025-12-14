@@ -49,7 +49,7 @@ class ItemResponse(ItemCreate):
 # FastAPI App
 # -------------------------
 app = FastAPI()
-mcp = FastApiMCP(app, allow_post=True)
+mcp = FastApiMCP(app)
 
 # -------------------------
 # Root endpoint
@@ -133,3 +133,4 @@ def delete_item(item_id: int):
 
 
 mcp.mount()
+
